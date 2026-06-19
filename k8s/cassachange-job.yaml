@@ -16,8 +16,8 @@ spec:
                 name: cassandra-credentials
           volumeMounts:
             - name: cassachange-config
-              mountPath: /migrations/cassachange.yaml
-              subPath: cassachange.yaml
+              mountPath: /migrations/cassachange.yml
+              subPath: cassachange.yml
       volumes:
         - name: cassachange-config
           configMap:

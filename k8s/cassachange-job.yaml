@@ -1,23 +1,23 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: cassachange-migrations
+  name: cassachange-cassandra
 spec:
   backoffLimit: 0
   template:
     spec:
       restartPolicy: Never
       containers:
-        - name: cassachange
-          image: ghcr.io/openhorizontal/cassandra-migrations:latest
+        - name: cassachange-cassandra
+          image: PLACEHOLDER
           imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
                 name: cassandra-credentials
           volumeMounts:
             - name: cassachange-config
-              mountPath: /migrations/cassachange.yml
-              subPath: cassachange.yml
+              mountPath: /migrations/cassachange.yaml
+              subPath: cassachange.yaml
       volumes:
         - name: cassachange-config
           configMap:

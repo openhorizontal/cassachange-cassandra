@@ -13,7 +13,7 @@ spec:
           imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
-                name: cassandra-credentials
+                name: cassachange-cassandra-secret
           volumeMounts:
             - name: cassachange-config
               mountPath: /migrations/cassachange.yml
